@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
+import radius from '../../utils/style/radius';
 
 const StyledLink = styled(Link)`
     width: 26%;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: ${radius.medium};
     aspect-ratio: 1 / 1;
     margin: 3%;
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        margin: 3% 0%;
+    }
 `
 const StyledCard = styled.figure`
     position: relative;
@@ -32,13 +36,15 @@ const StyledTitle = styled.figcaption`
     background: linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(0,0,0,5) 100%);
     width: 100%;
     height: 100%;
-    /* top: 39%; */
-    padding: 85% 5% 5% 5%
+    padding: 85% 5% 5% 5%;
+    @media screen and (max-width: 480px) {
+        font-size: 5vw;
+    }
 
 `
 function Card({ title, cover, id }) {
     return (
-        <StyledLink to={`/fiche/${id}`}>
+        <StyledLink to={`/logements/${id}`}>
             <StyledCard >
                 <CardImg src={cover} alt="logement" />
                 <StyledTitle className='white_txt'>{title}</StyledTitle>

@@ -2,15 +2,20 @@ import listeLogements from '../../data/listeLogements.json'
 import Card from '../Card'
 import colors from '../../utils/style/colors'
 import styled from 'styled-components'
+import radius from '../../utils/style/radius';
 
 const StyledGrid = styled.div`
     display: flex;
-    background: ${colors.secondary};
+    background-color: ${colors.secondary};
     justify-content: space-around;
     flex-wrap: wrap;
-    border-radius: 25px;
+    border-radius: ${radius.big};
     padding: 0% 0%;
-`
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+        background-color: white;
+    }
+`;
 
 function Logements() {
     return (

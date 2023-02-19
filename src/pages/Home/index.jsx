@@ -14,6 +14,11 @@ const StyledCaption = styled.figcaption`
 const StyledBlock = styled.section`
     width: 90%;
     text-align: center;
+    &>figure {
+      @media screen and (max-width: 480px) {
+        height: 30vw;
+      }
+    }
 `
 
 function Home() {

@@ -13,13 +13,24 @@ const StyledHeader = styled.header`
     align-items: center;
     width: 90%;
     height: 8vw;
+    @media screen and (max-width: 480px) {
+        font-size: 5vw;
+        margin: 3% 0%;
+    }
 `
 const StyledLogo = styled.img`
     height: 70%;
+    @media screen and (max-width: 480px) {
+        height: 100%;
+    }
 `
 const StyledLink = styled(Link)`
     padding: 0% 0% 0% 3vw;
     color: ${colors.primary};
+    @media screen and (max-width: 480px) {
+        font-size: 3.5vw;
+        /*padding: 0%*/
+    }
 `
 
 function Header() {

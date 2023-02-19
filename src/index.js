@@ -6,28 +6,27 @@ import {createGlobalStyle} from 'styled-components'
 
 import Home from './pages/Home/index.jsx'
 import AboutUs from './pages/AboutUs/index.jsx'
+import NotFound from './pages/NotFound/index.jsx'
+import Fiche from './pages/Fiche/index.jsx'
+
 import Header from './components/Header'
-import Error from './components/Error/index.jsx'
 import Footer from './components/Footer/index.jsx'
-import Fiche from './components/Fiche/index.jsx'
 import colors from './utils/style/colors.js'
 
-
-const fontUrl = `https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap')`;
+import "./fonts/Montserrat-Light.ttf";
+import "./index.css"
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-      font-family: 'Montserrat';
-      src:url(${fontUrl});
-      font-weight: 300;
-      font-style: normal;
-    }
     * {
       font-family: 'Montserrat', Helvetica, sans-serif;
       box-sizing: border-box;
       text-decoration: none;
       font-size: 1.5vw;
       color: ${colors.primary};
+      list-style: none;
+      @media screen and (max-width: 480px) {
+        font-size: 3vw;
+    }
     }
     body {
       margin: 0;
@@ -47,11 +46,15 @@ const GlobalStyle = createGlobalStyle`
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 90vh;
+      @media screen and (max-width: 768px) {
+        min-height: 90vh;
     }
-    .white_txt{
+    }
+    .white_txt {
       color: white;
     }
-    section{
+    section {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -70,8 +73,8 @@ root.render(
           <Routes>
               <Route path="/" element={<Home /> } />
               <Route path='/about-us' element={<AboutUs />}/>
-              <Route path='*' element={<Error/>}/>
-              <Route path='/fiche/*' element={<Fiche/>}/>
+              <Route path='/logements/:logisId' element={<Fiche/>}/>
+              <Route path='*' element={<NotFound/>}/>
           </Routes>
       <Footer/>
     </Router>

@@ -7,6 +7,10 @@ const StyledLogo = styled.img`
     height: 2vw;
     width: auto;
     margin: 1vw;
+    @media screen and (max-width: 480px) {
+        height: 5vw;
+        margin: 3% auto;
+    }
 `
 
 const StyledFooter = styled.footer`
@@ -17,6 +21,14 @@ const StyledFooter = styled.footer`
     color: white;
     align-items: center;
     padding: 2vw;
+    @media screen and (max-width: 480px) {
+        padding: 4% 0%;
+    }
+    &>span{
+        @media screen and (max-width: 480px) {
+            font-size: 2vw;
+        }
+    }
 `
 
 function Footer() {
