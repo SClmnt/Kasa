@@ -1,4 +1,3 @@
-//import colors from '../../utils/style/colors'
 import styled from 'styled-components';
 import Banner from '../../components/Banner';
 import background from "../../assets/banner_aboutUs.jpg";
