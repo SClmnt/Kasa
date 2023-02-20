@@ -78,7 +78,7 @@ function Gallery({pictures, index = 0}){
             {pictures.length > 1 && 
                 <StyledArrow onClick={handlePreviousPicture} $isLeft/>
             }
-            <StyledPic src={currentPicture} alt='first'/>
+            <StyledPic src={currentPicture} alt='intérieur du logement'/>
             {pictures.length > 1 &&
                 <StyledArrow onClick={handleNextPicture} $isRight/>
             }
